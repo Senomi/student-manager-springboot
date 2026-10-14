@@ -86,4 +86,5 @@ public class StudentController {
  service.deleteById(id);
  redirect.addFlashAttribute("success", "Student deleted successfully.");
  return "redirect:/students";
- 
+ }
+}
