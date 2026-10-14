@@ -1,20 +1,22 @@
 package com.example.student_manager.controller;
 
-import com.example.student_manager.model.Student;
-import com.example.student_manager.service.StudentService;
-import jakarta.validation.Valid;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.ui.Model;
+import com.example.student_manager.model.Student;
+import com.example.student_manager.service.StudentService;
+
+import jakarta.validation.Valid;
 import java.util.List;
+import org.springframework.stereotype.Controller;
+
 @Controller
 public class StudentController {
- private static final List<String> COURSES = List.of(
+    private static final List<String> COURSES = List.of(
  "Computer Science", "Software Engineering", "Data Science",
  "Statistics", "Information Systems");
  private final StudentService service;
@@ -88,4 +90,6 @@ public class StudentController {
  redirect.addFlashAttribute("success", "Student deleted successfully.");
  return "redirect:/students";
  }
+
+
 }
